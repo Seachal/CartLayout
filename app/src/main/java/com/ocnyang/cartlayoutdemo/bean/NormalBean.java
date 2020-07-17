@@ -9,7 +9,11 @@ import com.ocnyang.cartlayout.bean.CartItemBean;
  *    * * * *   * * * *   *     *.Yang  Web site: www.ocnyang.com
  *******************************************************************/
 
+
 public class NormalBean extends CartItemBean{
+    /**
+     * 降价数量
+     */
     int markdownNumber;
 
     public int getMarkdownNumber() {

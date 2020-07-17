@@ -3,6 +3,9 @@ package com.ocnyang.cartlayoutdemo.bean;
 
 import com.ocnyang.cartlayout.bean.GroupItemBean;
 
+/**
+ * sca: 商铺 bean，
+ */
 public class ShopBean extends GroupItemBean {
     String shop_name;
 

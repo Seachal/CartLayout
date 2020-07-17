@@ -6,6 +6,9 @@ import android.widget.TextView;
 import com.ocnyang.cartlayout.viewholder.CartViewHolder;
 import com.ocnyang.cartlayoutdemo.R;
 
+/**
+ *  sca: 店铺对应的 ViewHolder
+ */
 public class GroupViewHolder extends CartViewHolder {
     public TextView textView;
 

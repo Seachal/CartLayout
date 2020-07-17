@@ -53,6 +53,10 @@ public class MainAdapter extends CartAdapter<CartViewHolder> {
         return R.layout.activity_main_item_group;
     }
 
+    /**
+     * 购物车中有 6 件商品已经降价
+     * @return
+     */
     @Override
     protected int getNormalItemLayout() {
         return R.layout.activity_main_item_normal;

@@ -8,6 +8,10 @@ import com.ocnyang.cartlayout.viewholder.CartViewHolder;
 import com.ocnyang.cartlayoutdemo.R;
 import com.ocnyang.cartlayoutdemo.bean.GoodsBean;
 
+
+/**
+ * sca: 商品对应的 ViewHolder
+ */
 public abstract class ChildViewHolder extends CartViewHolder implements View.OnClickListener {
     public TextView textViewReduce;
     public TextView textView;

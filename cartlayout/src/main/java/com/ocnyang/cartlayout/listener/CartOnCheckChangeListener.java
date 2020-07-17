@@ -9,6 +9,9 @@ import com.ocnyang.cartlayout.bean.IGroupItem;
 
 import java.util.List;
 
+/**
+ * CartOnCheckChangeListener 定义为 abstract 是因为 没有实现  onCalculateChanged， 在作为匿名内部类时实现
+ */
 public abstract class CartOnCheckChangeListener implements OnCheckChangeListener, OnItemChangeListener {
 
     RecyclerView recyclerView;
@@ -22,6 +25,22 @@ public abstract class CartOnCheckChangeListener implements OnCheckChangeListener
     @Override
     public void onCheckedChanged(List<ICartItem> beans, int position, boolean isChecked, int itemType) {
         switch (itemType) {
+//            什么时候触发的选中？  根据代码   CartAdapter 中  if (holder.mCheckBox != null) 知道，
+                //            此案例 不会执行normalCheckChange，
+            //<editor-fold desc="Description">
+            //            @Override
+//            @CallSuper
+//            public void onBindViewHolder(@NonNull final VH holder, final int position) {
+//                holder.bindData(mDatas.get(position));
+//                if (holder.mCheckBox != null) {
+//                    holder.mCheckBox.setOnClickListener(new OnCheckBoxClickListener(position,
+//                            mDatas.get(position).getItemType()));
+//                    if (holder.mCheckBox.isChecked() != mDatas.get(position).isChecked()) {
+//                        holder.mCheckBox.setChecked(mDatas.get(position).isChecked());
+//                    }
+//                }
+//            }
+            //</editor-fold>
             case ICartItem.TYPE_NORMAL:
                 normalCheckChange(beans, position, isChecked);
                 break;
@@ -45,6 +64,7 @@ public abstract class CartOnCheckChangeListener implements OnCheckChangeListener
      */
     @Override
     public void normalCheckChange(List<ICartItem> beans, int position, boolean isChecked) {
+//        [(1条消息)RecyclerView 刷新问题 adpater.notifyDataSetChanged() have problem_Jason_HD的博客-CSDN博客_observablearraylist recyclerview不刷新](https://blog.csdn.net/Jason_HD/article/details/80288167)
         if (recyclerView.getScrollState() == RecyclerView.SCROLL_STATE_IDLE
                 && !recyclerView.isComputingLayout()) {// 避免滑动时刷新数据
             beans.get(position).setChecked(isChecked);

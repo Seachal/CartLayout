@@ -1,6 +1,10 @@
 package com.ocnyang.cartlayoutdemo.bean;
 import com.ocnyang.cartlayout.bean.ChildItemBean;
 
+
+/**
+ * 商铺内的信息 bean
+ */
 public class GoodsBean extends ChildItemBean {
     private String goods_name;
     private double goods_price;

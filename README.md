@@ -44,3 +44,9 @@ Add it in your root build.gradle at the end of repositories:
 > 更详细的使用方法请查看 Demo，Demo中实现方式和各方法的作用在注释中写的很详细。
 
 [APK下载地址](./README_Res/release/app-release.apk)
+
+----
+补充知识：
+* [(1条消息)RecyclerView 刷新问题 adpater.notifyDataSetChanged() have problem_Jason_HD的博客-CSDN博客_observablearraylist recyclerview不刷新](https://blog.csdn.net/Jason_HD/article/details/80288167)
+
+* 写法是老写法，且使用的是 ListView

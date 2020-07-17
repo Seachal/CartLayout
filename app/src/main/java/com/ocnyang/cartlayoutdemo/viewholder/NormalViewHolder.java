@@ -7,6 +7,10 @@ import android.widget.TextView;
 import com.ocnyang.cartlayout.viewholder.CartViewHolder;
 import com.ocnyang.cartlayoutdemo.R;
 
+
+/**
+ *    正常的 viewHolder   ,  activity_main_item_normal
+ */
 public class NormalViewHolder extends CartViewHolder {
     public TextView textView;
     public ImageView imgViewClose;
