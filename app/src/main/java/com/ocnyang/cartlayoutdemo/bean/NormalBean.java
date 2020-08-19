@@ -9,7 +9,9 @@ import com.ocnyang.cartlayout.bean.CartItemBean;
  *    * * * *   * * * *   *     *.Yang  Web site: www.ocnyang.com
  *******************************************************************/
 
-
+/**
+ * 在列表头部，购物车中有 * 件商品已经降价，快去看看
+ */
 public class NormalBean extends CartItemBean{
     /**
      * 降价数量

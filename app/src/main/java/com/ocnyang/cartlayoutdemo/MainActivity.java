@@ -204,6 +204,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * 2. 单个添加各个条目可以通过对应的 add 方法；
      * 3. 单独添加一个 GroupItem ,可以把它的 ChildItem 数据放到 setChilds 中。
      * @return
+     *
+     * sca: 数据是平铺的结构，所以 yuanzi 也用平铺的结构？
      */
     private List<CartItemBean> getData() {
         ArrayList<CartItemBean> cartItemBeans = new ArrayList<>();

@@ -105,18 +105,20 @@ public abstract class CartOnCheckChangeListener implements OnCheckChangeListener
             IGroupItem groupBean = ParseHelper.getGroupBean(beans, position);
             List<ICartItem> childList = ParseHelper.getChildList(beans, position);
 
-            if (!isChecked) {
-                //group 为选中状态
+            if (!isChecked) {  //   isChecked = false
+                //group 为选中状态 ， sca: 取消group的选中状态
                 if (groupBean.isChecked()) {
                     int groupPosition = ParseHelper.getGroupPosition(beans,
                             position);
                     setGroupCheck(beans, groupPosition, false);
                     cartAdapter.notifyItemChanged(groupPosition, CartAdapter.PAYLOAD_CHECKBOX);
                 }
-            } else {
+
+            } else {  //     isChecked = true
                 for (int i = 0; i < childList.size(); i++) {
                     // 只要有一个 child 没有选中，group 就不是选中
                     if (!childList.get(i).isChecked()) {
+//                        sca: return 时for 方法体后面的代码不会被执行
                         return;
                     }
                 }

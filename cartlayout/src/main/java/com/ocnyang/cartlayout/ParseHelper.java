@@ -18,6 +18,7 @@ public class ParseHelper {
      */
     public static IGroupItem<IChildItem> getGroupBean(List<ICartItem> beans, int childPosition) {
         for (int i = childPosition; i >= 0; i--) {
+//            sca: 向前查找，遇到的第一个组类型，就是 childe的父类型
             if (beans.get(i).getItemType() == ICartItem.TYPE_GROUP) {
                 return ((IGroupItem) beans.get(i));
             }
@@ -34,6 +35,7 @@ public class ParseHelper {
     public static List<ICartItem> getChildList(List<ICartItem> beans, int position) {
         List<ICartItem> childList = new ArrayList<>();
         for (int i = position; i < beans.size(); i++) {
+//            向后查找，遇到下一个组就结束
             if (beans.get(i).getItemType() == ICartItem.TYPE_GROUP) {
                 break;
             } else if (beans.get(i).getItemType() == ICartItem.TYPE_CHILD) {
@@ -42,6 +44,7 @@ public class ParseHelper {
         }
 
         for (int i = position - 1; i >= 0; i--) {
+//            想前查找，遇到前一个组就结束
             if (beans.get(i).getItemType() == ICartItem.TYPE_GROUP) {
                 break;
             } else if (beans.get(i).getItemType() == ICartItem.TYPE_CHILD) {
